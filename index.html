@@ -146,7 +146,7 @@
         <h1>Centro Cultural Emiliano Zapata</h1>
         <div class="warning-box collapsed">
             <div class="warning-header">
-                <p>¿Tienes dificultades para la inscripción al bazar cultural?<i class="fas fa-chevron-up"></i></p>
+                <p>¿Tienes dificultades para la inscripción al bazar cultural?<i class="fas fa-chevron-down"></i></p>
             </div>
             <div class="warning-content">
                 <p>Envia un email a <strong>centroculturalzapata.ecatepec@gmail.com</strong></p>
@@ -190,7 +190,7 @@
         <script>
             $(document).ready(function() {
                 $('.warning-box').click(function() {
-                    $(this).toggleClass('collapsed');
+                    $(this).toggleClass('not-collapsed');
                     $(this).find('.warning-content').slideToggle(300);
                     $(this).find('.warning-header i').toggleClass('fa-chevron-up fa-chevron-down');
                 });
