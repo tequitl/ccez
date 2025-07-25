@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Cultural Emiliano Zapata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #ff0066;
+            --text-color: #ffffff;
+            --hover-color: #ff0033;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 102, 0.1);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .warning-box h2 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box p {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .warning-box strong {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+
+        .social-link span {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .social-link {
+                padding: 0.8rem;
+            }
+        }
+
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--accent-color),
+                             0 0 10px var(--accent-color),
+                             0 0 15px var(--accent-color);
+            }
+            to {
+                text-shadow: 0 0 10px var(--accent-color),
+                             0 0 20px var(--accent-color),
+                             0 0 30px var(--accent-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Centro Cultural Emiliano Zapata</h1>
+        <div class="warning-box collapsed">
+            <div class="warning-header">
+                <p>¿Tienes dificultades para el registro al show?<i class="fas fa-chevron-down"></i></p>
+            </div>
+            <div class="warning-content">
+                <p>Envia un email a <strong>centroculturalzapata.ecatepec@gmail.com</strong></p>
+                <p><strong>Asunto: REGISTRO A SHOW INSULINI</strong></p>
+                <p><strong>Mensaje debe incluir:</strong></p>
+                <p>- Número de boletos</p>
+                <p>- Nombres de los asistentes</p>
+                <p style="font-size: 1.2rem; color: var(--accent-color); font-weight: bold;">Te responderemos con los QR de los boletos, son gratuitos y no transferibles</p>
+            </div>
+        </div>
+
+        <style>
+            .warning-box {
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .warning-box.collapsed .warning-content {
+                display: none;
+            }
+            
+            .warning-header {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .warning-header i {
+                margin-left: 10px;
+                transition: transform 0.3s ease;
+            }
+            
+            .warning-box.collapsed .warning-header i {
+                transform: rotate(-90deg);
+            }
+        </style>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.warning-box').click(function() {
+                    $(this).toggleClass('not-collapsed');
+                    $(this).find('.warning-content').slideToggle(300);
+                    $(this).find('.warning-header i').toggleClass('fa-chevron-up fa-chevron-down');
+                });
+            });
+        </script>
+        <div class="social-links">
+            <a href="https://www.eventbrite.com/e/show-insulini-y-los-espanta-suegras-tickets-1531204336389?aff=oddtdtcreator" class="social-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Registrate al Show de Insuilini</span>
+            </a>
+            <a href="https://www.facebook.com/CCEmilianoZapata" class="social-link">
+                <i class="fab fa-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/ccez.ecatepec/" class="social-link">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://tiktok.com" class="social-link">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="mailto:ccentroculturalzapata.ecatepec@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <i class="fas fa-star"></i>
+    </footer>
+</body>
+</html>
