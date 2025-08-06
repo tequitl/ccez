@@ -92,6 +92,33 @@
             box-shadow: 0 0 20px var(--accent-color);
         }
 
+        .social-link.sold-out {
+            background: rgba(128, 128, 128, 0.3);
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .social-link.sold-out i {
+            color: #888;
+        }
+
+        .social-link.sold-out span {
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .social-link.sold-out::after {
+            content: "AGOTADO";
+            position: absolute;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
         .social-link i {
             font-size: 1.5rem;
             margin-right: 1rem;
@@ -144,13 +171,25 @@
 <body>
     <div class="container">
         <h1>Centro Cultural Emiliano Zapata</h1>
+        <div class="info-box" style="background: rgba(255, 165, 0, 0.1); border: 2px solid #ffa500; border-radius: 10px; padding: 1.5rem; margin: 2rem auto; max-width: 600px; text-align: center;">
+            <h3 style="color: #ffa500; font-size: 1.2rem; margin-bottom: 1rem;">📢 Aviso Importante</h3>
+            <p style="margin-bottom: 0.8rem; line-height: 1.5;">Los boletos para el <strong style="color: var(--accent-color);">Bazar Cultural están AGOTADOS</strong></p>
+            <p style="margin-bottom: 0.8rem; line-height: 1.5;">Pero aún puedes registrarte al <strong style="color: #ffa500;">Show de Insulini</strong> 🎭</p>
+            <p style="font-size: 1.1rem; color: #ffa500; font-weight: bold;">¡No te pierdas esta increíble presentación!</p>
+        </div>
+        <div class="social-links">
+             <a href="https://www.eventbrite.com/e/show-insulini-y-los-espanta-suegras-tickets-1531204336389?aff=oddtdtcreator" class="social-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Registrate al Show de Insuilini</span>
+            </a>
+        </div>
         <div class="warning-box collapsed">
             <div class="warning-header">
-                <p>¿Tienes dificultades para la inscripción al bazar cultural?<i class="fas fa-chevron-down"></i></p>
+                <p>¿Tienes dificultades para el registro al show?<i class="fas fa-chevron-down"></i></p>
             </div>
             <div class="warning-content">
                 <p>Envia un email a <strong>centroculturalzapata.ecatepec@gmail.com</strong></p>
-                <p><strong>Asunto:</strong> INSCRIPCION A BAZAR CULTURAL</p>
+                <p><strong>Asunto: REGISTRO A SHOW INSULINI</strong></p>
                 <p><strong>Mensaje debe incluir:</strong></p>
                 <p>- Número de boletos</p>
                 <p>- Nombres de los asistentes</p>
@@ -197,7 +236,11 @@
             });
         </script>
         <div class="social-links">
-            <a href=" https://www.eventbrite.com.mx/e/1489661279989?aff=oddtdtcreator" class="social-link">
+             <a href="https://www.eventbrite.com/e/show-insulini-y-los-espanta-suegras-tickets-1531204336389?aff=oddtdtcreator" class="social-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Registrate al Show de Insuilini</span>
+            </a>
+            <a href="#" class="social-link sold-out">
                 <i class="fas fa-ticket-alt"></i>
                 <span>Registrate al Bazar Cultural</span>
             </a>
